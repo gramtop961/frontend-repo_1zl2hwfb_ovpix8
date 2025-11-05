@@ -1,10 +1,8 @@
-import { Link as ScrollLink } from 'react-scroll';
-
 export default function Navbar() {
   const navItems = [
-    { to: 'hero', label: 'Home' },
-    { to: 'projects', label: 'Projects' },
-    { to: 'contact', label: 'Contact' },
+    { href: '#hero', label: 'Home' },
+    { href: '#projects', label: 'Projects' },
+    { href: '#contact', label: 'Contact' },
   ];
 
   return (
@@ -15,16 +13,13 @@ export default function Navbar() {
         </a>
         <nav className="hidden md:flex items-center gap-6">
           {navItems.map((item) => (
-            <ScrollLink
-              key={item.to}
-              to={item.to}
-              smooth
-              duration={500}
-              offset={-64}
-              className="text-sm font-medium text-gray-700 hover:text-gray-900 cursor-pointer"
+            <a
+              key={item.href}
+              href={item.href}
+              className="text-sm font-medium text-gray-700 hover:text-gray-900"
             >
               {item.label}
-            </ScrollLink>
+            </a>
           ))}
         </nav>
         <a
